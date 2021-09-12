@@ -1,0 +1,495 @@
+-- MySQL dump 10.13  Distrib 5.5.44, for Linux (x86_64)
+--
+-- Host: mysql    Database: eze_
+-- ------------------------------------------------------
+-- Server version	5.6.35-81.0-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `adm_user`
+--
+
+DROP TABLE IF EXISTS `adm_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `adm_user` (
+  `userID` mediumint(7) unsigned NOT NULL AUTO_INCREMENT,
+  `adm_password` varchar(32) NOT NULL DEFAULT '',
+  `adm_login` varchar(20) NOT NULL DEFAULT '',
+  `full_control` tinyint(1) unsigned DEFAULT '0',
+  `ts_created` varchar(10) NOT NULL DEFAULT '',
+  `ts_accessed` varchar(10) DEFAULT '0',
+  PRIMARY KEY (`userID`),
+  UNIQUE KEY `id` (`userID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `adm_user`
+--
+
+LOCK TABLES `adm_user` WRITE;
+/*!40000 ALTER TABLE `adm_user` DISABLE KEYS */;
+INSERT INTO `adm_user` VALUES (1,'f883a724323f6fd3ce78493418b3cb53','ezernieki',1,'1152271630','1302245633'),(2,'153b89734c4cc2bf02a9e21dd4ca8bca','viesturs',1,'1226520938','0');
+/*!40000 ALTER TABLE `adm_user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `email_page`
+--
+
+DROP TABLE IF EXISTS `email_page`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `email_page` (
+  `wwwlngID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `before_form_txt` text NOT NULL,
+  `after_form_txt` text NOT NULL,
+  `em_address_title` varchar(255) NOT NULL DEFAULT '',
+  `em_content_title` varchar(255) NOT NULL DEFAULT '',
+  `hint` text NOT NULL,
+  `email_is_sent` text NOT NULL,
+  `email_not_sent` text NOT NULL,
+  `button_title` varchar(150) NOT NULL DEFAULT '',
+  PRIMARY KEY (`wwwlngID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `email_page`
+--
+
+LOCK TABLES `email_page` WRITE;
+/*!40000 ALTER TABLE `email_page` DISABLE KEYS */;
+INSERT INTO `email_page` VALUES (1,'<b>Epasta anketa</b>','Gaidīsim ciemos!','Jūsu epasta adrese','Vēstules teksts','Garantējam, ka Jūsu norādītā kontaktinformācija nebūs pieejama trešajām personām.','Vēstule nosūtīta veiksmīgi!','Vēstuli nosūtīt neizdevās. Nav aizpildīti visi laukumi vai arī vēstule tiek sūtīta vairākas reizes!','Nosūtīt'),(4,'<b>E Mail</b>','','Ihre Mailadresse','Ihre Nachricht an uns','Ihre Angaben werden vertraulich behandelt und NICHT an 3. weitergegeben.','','','Senden'),(2,'<b>Пишите нам</b>','Ожидаем Вашего визита!','Ваш E-mail','Текст сообщения','Мы гарантируем, что Вами данная информация не будет доступна третьим лицам.','Письмо отправлено успешно!','Письмо не удалось отправить. Не заполнены все поля!','Отправить');
+/*!40000 ALTER TABLE `email_page` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `email_page_settings`
+--
+
+DROP TABLE IF EXISTS `email_page_settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `email_page_settings` (
+  `send_to_email` varchar(150) NOT NULL DEFAULT '',
+  `textarea_width` smallint(3) NOT NULL DEFAULT '300',
+  `textarea_height` smallint(3) NOT NULL DEFAULT '150',
+  `button_position` varchar(6) NOT NULL DEFAULT 'right',
+  `msg_subject` varchar(255) NOT NULL DEFAULT '',
+  `email_from` varchar(150) NOT NULL DEFAULT '',
+  `show_form` tinyint(1) unsigned NOT NULL DEFAULT '1'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `email_page_settings`
+--
+
+LOCK TABLES `email_page_settings` WRITE;
+/*!40000 ALTER TABLE `email_page_settings` DISABLE KEYS */;
+INSERT INTO `email_page_settings` VALUES ('info@ezernieki.lv',300,150,'right','vestule no www.ezernieki.lv','',1);
+/*!40000 ALTER TABLE `email_page_settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gl_folder_description`
+--
+
+DROP TABLE IF EXISTS `gl_folder_description`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gl_folder_description` (
+  `gl_folderID` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `wwwlngID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `description` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gl_folder_description`
+--
+
+LOCK TABLES `gl_folder_description` WRITE;
+/*!40000 ALTER TABLE `gl_folder_description` DISABLE KEYS */;
+INSERT INTO `gl_folder_description` VALUES (1,1,'Daba',''),(1,2,'&#1055;&#1088;&#1080;&#1088;&#1086;&#1076;&#1072;',''),(2,1,'Aktivitātes',''),(2,2,'&#1040;&#1082;&#1090;&#1080;&#1074;&#1085;&#1086;&#1089;&#1090;&#1080;',''),(3,1,'Lielais viesu nams',''),(3,2,'&#1041;&#1086;&#1083;&#1100;&#1096;&#1086;&#1081; &#1076;&#1086;&#1084; &#1075;&#1086;&#1089;&#1090;&#1077;&#1081;',''),(4,1,'Mazais viesu nams',''),(4,2,'&#1041;&#1072;&#1085;&#1103;',''),(5,1,'Galdu klāšana',''),(5,2,'---',''),(5,3,'---',''),(5,4,'---','');
+/*!40000 ALTER TABLE `gl_folder_description` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gl_folders`
+--
+
+DROP TABLE IF EXISTS `gl_folders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gl_folders` (
+  `gl_folderID` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `position` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `created` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`gl_folderID`),
+  UNIQUE KEY `id` (`gl_folderID`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gl_folders`
+--
+
+LOCK TABLES `gl_folders` WRITE;
+/*!40000 ALTER TABLE `gl_folders` DISABLE KEYS */;
+INSERT INTO `gl_folders` VALUES (1,3,'1152274211'),(2,2,'1152274227'),(3,5,'1152288593'),(4,4,'1152288616'),(5,1,'1213713421');
+/*!40000 ALTER TABLE `gl_folders` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gl_images`
+--
+
+DROP TABLE IF EXISTS `gl_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gl_images` (
+  `gl_imgID` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `gl_folderID` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `added` varchar(10) DEFAULT NULL,
+  `by_userID` mediumint(7) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`gl_imgID`),
+  UNIQUE KEY `id` (`gl_imgID`),
+  KEY `gl_folderID` (`gl_folderID`)
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gl_images`
+--
+
+LOCK TABLES `gl_images` WRITE;
+/*!40000 ALTER TABLE `gl_images` DISABLE KEYS */;
+INSERT INTO `gl_images` VALUES (2,3,'1213711717',1),(3,3,'1213711778',1),(4,3,'1213711853',1),(5,3,'1213711864',1),(6,3,'1213711879',1),(7,3,'1213711893',1),(8,3,'1213711913',1),(9,3,'1213711924',1),(10,3,'1213711937',1),(11,4,'1213712230',1),(12,4,'1213712248',1),(13,4,'1213712442',1),(14,3,'1213712460',1),(15,3,'1213712878',1),(16,1,'1213713228',1),(17,1,'1213713243',1),(18,1,'1213713257',1),(19,1,'1213713271',1),(20,1,'1213713286',1),(21,1,'1213713302',1),(22,1,'1213713318',1),(23,1,'1213713335',1),(24,1,'1213713351',1),(25,1,'1213713365',1),(26,5,'1213713517',1),(27,5,'1213713533',1),(28,5,'1213713552',1),(29,5,'1213713577',1),(30,2,'1213713680',1),(31,2,'1213713692',1),(32,2,'1213713709',1),(33,2,'1213713726',1),(34,2,'1213713741',1);
+/*!40000 ALTER TABLE `gl_images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `gl_settings`
+--
+
+DROP TABLE IF EXISTS `gl_settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gl_settings` (
+  `def_thumb_height` smallint(3) unsigned DEFAULT '90',
+  `def_thumb_width` smallint(3) unsigned DEFAULT '120',
+  `def_full_height` smallint(3) unsigned DEFAULT '360',
+  `def_full_width` smallint(3) unsigned DEFAULT '480',
+  `preview_type` tinyint(1) unsigned DEFAULT '1',
+  `show_fl_creation_date` tinyint(1) unsigned DEFAULT '0',
+  `thumbs_vert_per_page` tinyint(1) unsigned DEFAULT '2',
+  `thumbs_hori_per_page` tinyint(1) unsigned DEFAULT '3'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gl_settings`
+--
+
+LOCK TABLES `gl_settings` WRITE;
+/*!40000 ALTER TABLE `gl_settings` DISABLE KEYS */;
+INSERT INTO `gl_settings` VALUES (90,120,360,480,1,1,2,3);
+/*!40000 ALTER TABLE `gl_settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `homepage_settings`
+--
+
+DROP TABLE IF EXISTS `homepage_settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `homepage_settings` (
+  `wwwlngID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `hp_title` varchar(255) DEFAULT NULL,
+  `hp_keywords` text,
+  `hp_description` varchar(255) DEFAULT NULL,
+  `hp_copyright` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `homepage_settings`
+--
+
+LOCK TABLES `homepage_settings` WRITE;
+/*!40000 ALTER TABLE `homepage_settings` DISABLE KEYS */;
+INSERT INTO `homepage_settings` VALUES (1,'Atpūtas komplekss &quot;Ezernieki&quot;','atpūta, atputa, ezers, dīķis, dikis, pirts, pirtsnams, viesunams, daba, mežs, mezs, viesnīca, līgatne, ligatne, izklaide, jautrība, bankets, banketi, konference, konferences, pasākumi, peintbols, laivošana, laivosana','Atpūtas komplekss &quot;Ezernieki&quot; - vieta kur atgūt spēkus un rast patīkamas emocijas','Atpūtas komplekss &quot;Ezernieki&quot;'),(2,'&#1050;&#1086;&#1084;&#1087;&#1083;&#1077;&#1082;&#1089;&#1089; &#1086;&#1090;&#1076;&#1099;&#1093;&#1072; &quot;Ezernieki&quot;','','&#1050;&#1086;&#1084;&#1087;&#1083;&#1077;&#1082;&#1089;&#1089; &#1086;&#1090;&#1076;&#1099;&#1093;&#1072; &quot;Ezernieki&quot;','&#1050;&#1086;&#1084;&#1087;&#1083;&#1077;&#1082;&#1089;&#1089; &#1086;&#1090;&#1076;&#1099;&#1093;&#1072; &quot;Ezernieki&quot;');
+/*!40000 ALTER TABLE `homepage_settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `img_description`
+--
+
+DROP TABLE IF EXISTS `img_description`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `img_description` (
+  `gl_imgID` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `wwwlngID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `description` text,
+  KEY `gl_imgID` (`gl_imgID`),
+  KEY `wwwlngID` (`wwwlngID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `img_description`
+--
+
+LOCK TABLES `img_description` WRITE;
+/*!40000 ALTER TABLE `img_description` DISABLE KEYS */;
+/*!40000 ALTER TABLE `img_description` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `maps_img`
+--
+
+DROP TABLE IF EXISTS `maps_img`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `maps_img` (
+  `data` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `maps_img`
+--
+
+LOCK TABLES `maps_img` WRITE;
+/*!40000 ALTER TABLE `maps_img` DISABLE KEYS */;
+INSERT INTO `maps_img` VALUES ('<img src=img/custom/latvija_ligatne.gif vspace=4 hspace=4>\r<br>\r<br>\r<br>\r<br><a href=img/custom/1221235562.jpg target=_blank><img src=img/custom/ligatnes_karte_small.jpg vspace=4 hspace=4></a>\r<br>\r<br>');
+/*!40000 ALTER TABLE `maps_img` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mealmenu_files`
+--
+
+DROP TABLE IF EXISTS `mealmenu_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mealmenu_files` (
+  `fileID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `wwwlngID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `link_title` varchar(255) NOT NULL DEFAULT '',
+  `real_filename` varchar(255) NOT NULL DEFAULT '',
+  `timestamp` varchar(10) NOT NULL DEFAULT '',
+  `file_ext` varchar(3) NOT NULL DEFAULT '',
+  PRIMARY KEY (`fileID`),
+  UNIQUE KEY `id` (`fileID`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mealmenu_files`
+--
+
+LOCK TABLES `mealmenu_files` WRITE;
+/*!40000 ALTER TABLE `mealmenu_files` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mealmenu_files` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu_categorys`
+--
+
+DROP TABLE IF EXISTS `menu_categorys`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu_categorys` (
+  `catID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `is_active` tinyint(1) unsigned DEFAULT '0',
+  `position` tinyint(2) unsigned DEFAULT NULL,
+  `type` varchar(10) DEFAULT 'page',
+  `added_by_userID` smallint(5) unsigned DEFAULT NULL,
+  PRIMARY KEY (`catID`),
+  UNIQUE KEY `id` (`catID`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu_categorys`
+--
+
+LOCK TABLES `menu_categorys` WRITE;
+/*!40000 ALTER TABLE `menu_categorys` DISABLE KEYS */;
+INSERT INTO `menu_categorys` VALUES (1,1,1,'',1),(2,1,2,'page',1),(3,1,9,'contacts',1),(4,1,3,'page',1),(5,1,4,'page',1),(7,1,6,'gallery',1),(9,1,5,'page',1),(11,1,10,'page',1);
+/*!40000 ALTER TABLE `menu_categorys` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `menu_categorys_values`
+--
+
+DROP TABLE IF EXISTS `menu_categorys_values`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `menu_categorys_values` (
+  `cat_valueID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `catID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `menu_item_title` varchar(150) NOT NULL DEFAULT '',
+  `wwwlngID` smallint(5) unsigned DEFAULT NULL,
+  PRIMARY KEY (`cat_valueID`),
+  UNIQUE KEY `id` (`cat_valueID`),
+  KEY `catID` (`catID`)
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `menu_categorys_values`
+--
+
+LOCK TABLES `menu_categorys_values` WRITE;
+/*!40000 ALTER TABLE `menu_categorys_values` DISABLE KEYS */;
+INSERT INTO `menu_categorys_values` VALUES (1,1,'Sveicināti',1),(2,1,'Здравствуйте',2),(3,2,'Lielais viesu nams',1),(4,2,'Большой дом гостей',2),(34,11,'Partneri',1),(5,3,'Kontakti un karte',1),(6,3,'&#1050;&#1086;&#1085;&#1090;&#1072;&#1082;&#1090;&#1099; &#1080; &#1082;&#1072;&#1088;&#1090;&#1072;',2),(7,4,'Mazais viesu nams',1),(8,4,'Баня',2),(9,5,'Konferences',1),(10,5,'Зал для банкетов',2),(13,7,'Bildes',1),(14,7,'&#1043;&#1072;&#1083;&#1077;&#1088;&#1077;&#1103;',2),(17,9,'Aktivitātes',1),(18,9,'Активный отдых',2),(35,11,'Дружественные сайты',2),(20,3,'Contacts & Map',3),(21,1,'Herzlich Willkommen',4),(22,2,'Haupthaus',4),(23,4,'Nebengebäude',4),(24,5,'weitere Möglichkeiten',4),(25,9,'Aktivitäten',4),(26,7,'Bilder',4),(27,3,'Kontakt und Karte',4),(28,1,'Greetings',3),(29,2,'The large guest house',3),(30,4,'Small guest house',3),(31,5,'Conference room',3),(32,9,'Aktivities',3),(33,7,'Gallery',3);
+/*!40000 ALTER TABLE `menu_categorys_values` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `page_bgimg`
+--
+
+DROP TABLE IF EXISTS `page_bgimg`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `page_bgimg` (
+  `catID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `img_file` varchar(10) NOT NULL DEFAULT '',
+  PRIMARY KEY (`catID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `page_bgimg`
+--
+
+LOCK TABLES `page_bgimg` WRITE;
+/*!40000 ALTER TABLE `page_bgimg` DISABLE KEYS */;
+INSERT INTO `page_bgimg` VALUES (1,''),(3,''),(2,'B13.jpg'),(4,'B14.jpg'),(8,'B9.jpg'),(5,'B12.jpg'),(7,''),(6,''),(9,'B19.jpg'),(10,''),(11,'');
+/*!40000 ALTER TABLE `page_bgimg` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pages`
+--
+
+DROP TABLE IF EXISTS `pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pages` (
+  `pageID` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `catID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `content` text,
+  `wwwlngID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `by_userID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  `edited` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`pageID`),
+  UNIQUE KEY `id` (`pageID`),
+  KEY `catID` (`catID`),
+  KEY `wwwlngID` (`wwwlngID`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pages`
+--
+
+LOCK TABLES `pages` WRITE;
+/*!40000 ALTER TABLE `pages` DISABLE KEYS */;
+INSERT INTO `pages` VALUES (1,1,'Atpūtas komplekss &quot;Ezernieki&quot;',1,1,'1152275013'),(2,1,'&#1050;&#1086;&#1084;&#1087;&#1083;&#1077;&#1082;&#1089;&#1089; &#1086;&#1090;&#1076;&#1099;&#1093;&#1072; &quot;Ezernieki&quot;',2,1,'1152275804'),(3,5,'<b>Konferenču zāle</b> lielajā viesu namā nodrošina vietu skaitu līdz 60 cilvēkiem. Ir pieejams nepieciešamais aprīkojums.\r<br>\r<br>\r<br><b><u>CENAS</u></b>\r<br>\r<br>Zāles īre 25LVL/h, cenā iekļauts projektors ar statīvu, kafijas un tējas galds.\r<br>\r<br>',1,1,'1268482504'),(4,2,'<font color=#9E5918><b>1. stāvā</b></font>\r<br><b>Liela zāle</b> (svinībām, konferencēm, kāzām un banketiem)  līdz 65 vietām!\r<br><b>Priekštelpa</b> (var izvietot dzīvo mūziku un spēlēt spēles)!\r<br><b>Terase</b> (ēdienreizēm brīvā dabā)!\r<br><b>Pirts</b> (ar atpūtas stūrīti; pirtsslotas, avota ūdens dušās)!\r<br><b>Virtuve</b> (var gatavot gan pavāri, gan paši viesi)!\r<br>\r<br><font color=#9E5918><b>2. stāvā</b></font>\r<br><b>Terase</b> (saullēkta pusē)!\r<br><b>5 divvietīgas istabiņas</b> \r<br><b>1 luksus istabiņa</b> (ar terasi saulrieta pusē)!\r<br>\r<br><font color=#9E5918><b>3. stāvā</b></font>\r<br>Liela telpa ar 40 gultasvietām \r<br>(kopā ar papildvietām, lielajā mājā var izguldīt 70 personas)\r<br>\r<br>\r<br><b><u>CENAS</u></b>\r<br>\r<br>Vienai personai 10 Ls, cenā iekļauts pirts, pirts slotiņas, ugunskura vieta un malka, āra grils ar malku, gultas vieta, mūzika, virtuves izmantošana, TV un āra kubls pildīts ar avota ūdeni (vieta 8 personām) \r<br>\r<br>*Uzturēšanās laiks aptuveni no plkst. 17:00 – 11:00 rītā (....vienošanās atsevišķi....).</font>',1,1,'1268478771'),(8,2,'<b>Nebengebäude</b>\r<br>\r<br><b>Erdgeschoss</b>\r<br>\r<br><b><u>Großzügiger Aufenthaltsbereich, </b></u>für sämtliche Anlässe wie z.B. Partys, diverse Feierlichkeiten, auch festliche Bankette mit warmen / kalten Buffet geeignet.\r<br>Auch ist genügen raum für Musik und Tanz. \r<br>Platz genug für bis zu 65 Personen\r<br><u>Livemusik</u> kann auf Wunsch organisiert werden.\r<br>\r<br><b>Terrasse</b> für Ihr wunderschönes Frühstück.\r<br>\r<br><b><u>Schön angelegter Saunabereich</u></b> für 8 Personen, mit Ruheraum. \r<br>Duschen mit Quellwasser.\r<br>\r<br><b><u>Großer Tauch-/ Sitzkübel</b></u>  im Freien  für 8 Personen.\r<br>Auf Wunsch mit kaltem oder warmen Wasser\r<br>\r<br><b><u>Küche</u></b>\r<br>Küchenbenutzung inkl.\r<br>Auf Wunsch werden Sie von uns natürlich auch landestypisch kulinarisch verwöhnt.\r<br>Gerne räuchern wir Ihre selbst gefangenen Fische, nach lettischer Art,  in unserem eigens dafür gebauten Räucherofen.\r<br>\r<br><b><u>2. Etage</b></u>\r<br>Hier befinden sich unsere 4 Gästezimmer.\r<br>Alle Zimmer können als Familienzimmer genutzt werden.\r<br>Toiletten und großes Badezimmer  auf der Etage.\r<br>\r<br><b><u>Zimmer 5</b></u>\r<br>Doppelzimmer, auch als Familienzimmer möglich, mit Dusche und WC\r<br>\r<br><b><u>Zimmer 6</b></u>\r<br>Hochzeitssuite – mit herrlichem Balkon für einen verträumten Sonnenuntergang\r<br>Bad mit WC, Dusche und Wanne\r<br>\r<br><b><u>Obergeschoss</b></u>\r<br>\r<br>Großes Matratzenlager unter den Dach.\r<br>Hier finden Sie Platz für 35 Personen.\r<br>',4,1,'1224418043'),(9,9,'<b>In unserem herrlich gelegenen Freizeitbereich habe Sie die verschiedensten Sportmöglichkeiten zur Auswahl. </b>\r<br>\r<br>Wie z.B.\r<br><b>\r<br><li>Paintball ( Gocha)\r<br><li>Fußball\r<br><li>Basketball\r<br><li>Volleyball\r<br><li>Wandern\r<br><li>Ruderboot\r<br><li>Fahrrad touren\r<br><li>Ausfahrten mit Quads\r<br>\r<br></b>\r<br>Auch stehen diverse Ausflugsmöglichkeiten zur Verfügung.\r<br>Gerne informieren wir Sie vor Ort.\r<br>',4,1,'1224417246'),(5,4,'<font color=#9E5918><b>1. stāvā</b></font>\r<br><b>Zāle</b> (snookera galds, TV un mūzikas centrs) līdz 20 cilv.\r<br><b>Pirts</b> (pirtsslotas, avota ūdens dušās)!\r<br><b>Virtuve</b>\r<br><b>Terase</b> (uz dīķu un meža pusi)!\r<br>\r<br><font color=#9E5918><b>2. stāvā</b></font>\r<br><b>3 divvietīgas istabiņas</b>\r<br><b>Terase</b> (saulrieta pusē)!\r<br><b>Visās istabiņās papildus guļvietas</b> var nodrošināt <b>ar saliekamajām gultām</b>. Izmantojot saliekamās gultas, kopā viesu namā var izguldīt līdz 20 viesiem.\r<br>\r<br><b><u>CENAS</u></b>\r<br>\r<br>Vienai personai 10 Ls, cenā iekļauts pirts, pirts slotiņas, ugunskura vieta, āra grills, gultasvietas, virtuves izmantošana, mūzika, TV. \r<br>\r<br>* Uzturēšanās laiks aptuveni no plkst. 17:00 – 11:00 rītā (....vienošanās atsevišķi....).\r<br>\r<br>',1,1,'1274337358'),(6,9,'<li><b>Sporta spēļu organizēšana</b>\r<br><li><b>Paintbols</b>\r<br><li><b>Kvadracikli</b>\r<br><li><b>Futbola laukums</b>\r<br><li><b>Basketbols</b>\r<br><li><b>Volejbola laukums ar aprīkojumu</b>\r<br><li><b>Dabas takas</b>\r<br><li><b>Pirtnieka pakalpojumi</b>\r<br><li><b>Makšķerēšana</b>\r<br><li><b>Foreles gatavošana uz vietas</b>\r<br><li><b>Riteņu noma</b>\r<br><li><b>Kūpinātava</b>\r<br><li><b>Karaoke</b>\r<br><li><b>Laivas</b>',1,1,'1268483969'),(7,3,'Viesu nams &quot;Ezernieki&quot; atrodas Cēsu rajonā, Augšlīgatnē. \r<br> \r<br><b>Epasts:</b> \r<br><b>info@ezernieki.lv</b>\r<br>atputa.ezernieki@inbox.lv \r<br> \r<br> \r<br><b>Tel.:</b> \r<br>+371 26592550 \r<br>+371 26601771 \r<br> \r<br> \r<br>Augšlīgatne atrodas 60km un aptuveni vienas stundas braucienā no Rīgas, braucot pa Vidzemes šoseju. Pirms pagrieziena uz Augšlīgatni, nogriezieties uz Vildogu un tālāk sekojiet uzstādītajām norādēm. Neskaidrību gadījumā, skatieties karti.',1,1,'1274336317'),(10,4,'Erdgeschoss\r<br>\r<br><b><u>Großzügiger Aufenthaltsbereich,</b></u> für sämtliche Anlässe wie z.B. Partys, Musik und Tanz. \r<br>\r<br><b>Terrasse</b> für Ihr wunderschönes Frühstück.\r<br>\r<br><b><u>Schön angelegter Saunabereich</u></b> für 6 Personen, Duschen mit Quellwasser.\r<br>\r<br><b><u>Küche</b></u>\r<br>Küchenbenutzung inkl.\r<br>Gerne räuchern wir Ihre selbst gefangenen Fische, nach lettischer Art,  in unserem eigens dafür gebauten Räucherofen.\r<br>\r<br>\r<br><b><u>2. Etage</u></b>\r<br>\r<br>Hier befinden sich unsere 3 Gästezimmer.\r<br>Alle Zimmer können als Familienzimmer genutzt werden.\r<br>2 Zimmer mit Dusche und WC\r<br>',4,1,'1224418192'),(11,3,'Gästehaus Ezernieki befindet sich in Augsligatne in der Region Cesis.\r<br>Augsligatne ist 60 km nordöstlich der Hauptstadt Riga. \r<br>Sie fahren die A2 von Riga nach Sigulda.\r<br>12 km hinter Sigulda erreichen Sie Augsligatne.\r<br>Hier werden wir Sie empfangen und zum Haus begleiten.\r<br>\r<br><b>E-mail:</b> \r<br><b>info@ezernieki.lv</b>\r<br>atputa.ezernieki@inbox.lv\r<br>\r<br>Weiter Informationen unter:\r<br>Tel\r<br>Lettisch, russisch, englisch\r<br>+ 371 26592550  \r<br>+ 371  26601771\r<br>\r<br><b>Deutsch:</b>\r<br>+ 371  28307980\r<br>',4,1,'1274336436'),(12,3,'The guest house &quot;Ezernieki is located in Cesis region, Augšlīgatne.\r<br>\r<br><b>E-mail:</b> \r<br><b>info@ezernieki.lv</b>\r<br>atputa.ezernieki@inbox.lv\r<br>\r<br>\r<br>\r<br><b>Tel.:</b>\r<br>+371 26592550\r<br>+371 26601771 \r<br>\r<br>Augšlīgatne is located approximately 60km far from Riga, what is about one hour drive from Riga by car to the Cesis/Pleskava direction. Before turning to Augšlīgatne, turn on Vildogas road and then follow the instructions installed. You should check out map, it is not hard to find.\r<br>\r<br>\r<br>\r<br>\r<br>',3,1,'1274336328'),(13,9,'\r<br><li>Sports games \r<br><li>Paintball \r<br><li>Quads \r<br><li>Soccer field \r<br><li>Basketball \r<br><li>Volleyball court, with facilities \r<br><li>Nature trails \r<br><li>Hotel services \r<br><li>Fishing \r<br><li>Cooking trout on the spot \r<br><li>Wheel-house \r<br><li>Karoke\r<br><li>Boats',3,1,'1226522306'),(14,5,'<b>Conference room</b> in the large guest house provides a venue to 60 people. All necessary equipment is aviable.\r<br>\r<br>\r<br><b>PRICES</b> \r<br>\r<br>25LVL hall / h, the price includes the projector with a tower, coffee and tea table.\r<br>\r<br>',3,1,'1226522529'),(15,4,'<b>First floor </b>\r<br><b>Hall</b> (snooker table, TV and music center) / 20 people. \r<br><b>Bath</b> (saunabrushes, spring water shower)! \r<br><b>Kitchen</b> \r<br>Terrace (forest view)! \r<br>\r<br><b>Second floor </b>\r<br><b>3 double rooms</b> \r<br><b>Terrace</b> (sunset side)! \r<br>Extra beds are aviable for more bedding place. Maximal - 20 bedding places.\r<br>\r<br><b>PRICES </b>\r<br>\r<br>12 Ls per person, price includes bath, sauna dusters, towels, fire place, outdoor grills, beds, kitchen use, music and TV. \r<br>\r<br>* Est. at no. 18:00 - 12:00 a.m..',3,1,'1226523058'),(18,2,'<font color=#9E5918><b>1-ый этаж</font></b>\r<br><b>Большой зал</b> (для праздников, конференций, свадеб и банкетов) до 65 мест!\r<br><b>Прихожая</b> (для музыкантов и игр)!\r<br><b>Терраса</b> (питание на свежем воздухе)!\r<br><b>Баня</b> (комната отдыха, березовые веники, родниковая вода для душа)!\r<br>Кухня (можно готовить самим или при договоре повара)!\r<br>\r<br><font color=#9E5918><b>2-ой этаж</font></b>\r<br><b>Терраса</b> (на стороне восхода солнце)!\r<br><b>5 двухместных номера</b>\r<br><b>1 люкс</b> (с террасой на стороне заката)!\r<br>\r<br><font color=#9E5918><b>3-ый этаж</font></b>\r<br>Большая комната (на 40 коек)\r<br>(с дополнительными спальными местами в большом доме можно расположить 70  гостей.)\r<br>\r<br>\r<br><b>ЦЕНЫ</b>\r<br>\r<br>10 Ls с человека, в стоимости: баня, веники, камин и дрова, гриль под открытым небом, кровати, музыка, пользование кухни, телевидение и наружная горячая бадья заполненая родниковой водой (8 мест)\r<br>\r<br>* Время пребывания с 17:00 до 11:00 утра (.... договоренность отдельно ....)\r<br>',2,1,'1268481101'),(16,11,'                                        <b>Sadarbības partneri</b>\r<br><hr>\r<br>\r<br>\r<br>\r<br><a href=http://www.makars.lv target=_blank><img src=img/custom/1264495981.jpg align=left vspace=4 hspace=4></a> <a href=http://www.vienkoci.lv/index.php target=_blank><img src=img/custom/1264496018.jpg align=right vspace=4 hspace=4></a>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>',1,1,'1264497633'),(17,11,'                                        <b>Sadarbības partneri</b>\r<br><hr>\r<br>\r<br>\r<br>\r<br><a href=http://www.makars.lv target=_blank><img src=img/custom/1264495981.jpg align=left vspace=4 hspace=4></a> <a href=http://www.vienkoci.lv/index.php target=_blank><img src=img/custom/1264496018.jpg align=right vspace=4 hspace=4></a>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>\r<br>',2,1,'1268476464'),(19,4,'<font color=#9E5918><b>1-ый этаж</font></b>\r<br><b>Зал</b> (бильярдным стол, телевизор и музыкальный центр) до 20 мест.\r<br><b>Баня</b> (березовые веники, родниковая вода для душа)!\r<br><b>Кухня</b>\r<br><b>Терраса</b> (с видом на лес и пруд)!\r<br>\r<br><font color=#9E5918><b>2-ой этаж</font></b>\r<br><b>3 двухместных номера</b>\r<br><b>Терраса</b> (на стороне заката)!\r<br><b>Во всех номерах возможни дополнительние кровати (раскладушки).</b>\r<br>\r<br><b>ЦЕНЫ</b>\r<br>\r<br>10 Ls с человека, в стоимости: баня, веники, камин и дрова, гриль под открытым небом, кровати, музыка, пользование кухни, телевидение.\r<br>\r<br>* Время пребывания с 17:00 до 11:00 утра (.... договоренность отдельно ....)\r<br>',2,1,'1268482115'),(20,5,'В большом доме возможно проводить <b>конференции</b>  и <b>банкеты</b>  (вместимость до 60 мест). Доступно необходимое оборудование.\r<br>\r<br>\r<br><b>ЦЕНЫ</b>\r<br>\r<br>25 Ls /час, в стоимости: проектор, кофе и чай.\r<br>',2,1,'1268483182'),(21,9,'<li><b> Спортивные игры </b>\r<br><li><b> Пейнтбол </b>\r<br><li><b> Квадрациклы </b>\r<br><li><b> Футбольное поле </b>\r<br><li><b> Баскетбол </b>\r<br><li><b> Волейбольная площадка с оборудованием </b>\r<br><li><b> Природные тропы </b>\r<br><li><b> Услуги банщика </b>\r<br><li><b> Рыбалка </b>\r<br><li><b> Приготовление форели на месте </b>\r<br><li><b> Велопрокат </b>\r<br><li><b> Коптильня </b>\r<br><li><b> Караоке </b>\r<br><li><b> Лодки </b>\r<br>',2,1,'1268484070'),(22,3,'Местонахождение комплекса отдыха &quot;Ezernieki&quot;  Cēsu rajons, Augšlīgatne (Аугшлигатне, Цесисский район).\r<br>\r<br>\r<br><b>E-mail:</b> \r<br><b>info@ezernieki.lv</b> \r<br>atputa.ezernieki@inbox.lv \r<br> \r<br> \r<br><b> Моб.т.:</b> \r<br>+371 26592550 \r<br>+371 26601771 \r<br> \r<br> \r<br>Аугшлигатне находитса 60 км от Риги, примерно час езды по Псковскому шоссе. Перед Аугшлигатне, поверните на лево (Vildoga 4) и следуйте указаниям. В случае неясностей смотрите карту.\r<br>',2,1,'1274335735');
+/*!40000 ALTER TABLE `pages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `whatsnew`
+--
+
+DROP TABLE IF EXISTS `whatsnew`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `whatsnew` (
+  `whatsnewID` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `content` text NOT NULL,
+  `date` varchar(10) DEFAULT NULL,
+  `wwwlngID` smallint(5) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`whatsnewID`),
+  UNIQUE KEY `id` (`whatsnewID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `whatsnew`
+--
+
+LOCK TABLES `whatsnew` WRITE;
+/*!40000 ALTER TABLE `whatsnew` DISABLE KEYS */;
+INSERT INTO `whatsnew` VALUES (1,'Vides taka','Trešdien, 2006. gada 21. jūnijā, Atpūtas kompleksā “Ezernieki” viesojās TV5 cilvēki un sniedza mums iespēju radīt jauku materiālu par mūsu viesu namiem un to apkārtni. Raidījums skatāms 2006. gada 25. jūnija rītā TV5 9:00 raidījumā “Vides taka”. Pateicamies TV5 “Vides takas” grupai par sadarbību!\r<br>','2006.06.21',1),(2,'Pasākumu telts','Tiek plānota telts pasākumiem, kur varēs piedalīties pat līdz 150 cilvēkiem. Plašāka informācija sekos…','2006.07.07',1);
+/*!40000 ALTER TABLE `whatsnew` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `www_languages`
+--
+
+DROP TABLE IF EXISTS `www_languages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `www_languages` (
+  `wwwlngID` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `short_name` varchar(15) NOT NULL DEFAULT '',
+  `full_name` varchar(60) NOT NULL DEFAULT '',
+  `is_active` tinyint(1) unsigned DEFAULT '0',
+  `is_default` tinyint(1) unsigned DEFAULT '0',
+  PRIMARY KEY (`wwwlngID`),
+  UNIQUE KEY `id` (`wwwlngID`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `www_languages`
+--
+
+LOCK TABLES `www_languages` WRITE;
+/*!40000 ALTER TABLE `www_languages` DISABLE KEYS */;
+INSERT INTO `www_languages` VALUES (1,'lat','latvie&#353;u',1,1),(2,'rus','русский',1,0),(3,'eng','angļu',1,0),(4,'ger','vācu',1,0);
+/*!40000 ALTER TABLE `www_languages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'eze_'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-05-03 17:44:45
