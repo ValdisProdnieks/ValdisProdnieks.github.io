@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Ezernieki.lv</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-  body {
-    font-family: "Lato", sans-serif
-  }
 
-  .mySlides {
-    display: none
-  }
-</style>
+<head>
 
-<a>
-  <a>
+  <title>Ezernieki.lv</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Lato", sans-serif
+    }
 
-  </a>
-</a>
+    .mySlides {
+      display: none
+    }
+  </style>
+</head>
 
 <body>
 
@@ -28,7 +26,7 @@
   <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
-        onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <a href="#" class="w3-bar-item w3-button w3-padding-large ">SĀKUMS</a>
       <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large w3-hide-small">VIESU NAMS</a>
       <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-hide-small">IESPĒJAS</a>
@@ -39,10 +37,10 @@
 
   <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
   <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">VIESU NAMS</a>
-    <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">IESPĒJAS</a>
-    <a href="#daba" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">DABA</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">KONTAKTI</a>
+    <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">VIESU NAMS</a>
+    <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">IESPĒJAS</a>
+    <a href="#daba" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">DABA</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">KONTAKTI</a>
 
   </div>
 
@@ -88,6 +86,40 @@
           izstrādāt ekskursijas programmas pa Līgatnes labākajiem apskates objektiem.</i>
       </p>
     </div>
+
+    <!-- daba  -->
+    <div class="w3-container w3-content w3-center w3-padding-64" id="daba">
+      <h2 class="w3-wide">Kaut kas par dabu</h2>
+    </div>
+
+    <!-- The Contact Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+      <h2 class="w3-wide w3-center">Kontakti</h2>
+      <p class="w3-opacity w3-center"><i>Sazinies ar mums!</i></p>
+      <div class="w3-row w3-padding-32">
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker" style="width:30px"></i> Ezernieki, Augšlīgatne,
+          Līgatnes novads, Latvija, LV-4108<br>
+          <i class="fa fa-phone" style="width:30px"></i> Telefons: +371 26592550<br>
+          <i class="fa fa-envelope" style="width:30px"> </i> E-pasts: info@ezernieki.lv<br>
+        </div>
+        <div class="w3-col m6">
+          <form action="/action_page.php" target="_blank">
+            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="Jūsu Vārds" required name="Name">
+              </div>
+              <div class="w3-half">
+                <input class="w3-input w3-border" type="text" placeholder="E-pasts" required name="Email">
+              </div>
+            </div>
+            <input class="w3-input w3-border" type="text" placeholder="Ziņa" required name="Message">
+            <button class="w3-button w3-black w3-section w3-right" type="submit">SŪTĪT ZIŅU</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
 
     <!-- The Services Section -->
     <div class="w3-black" id="services">
@@ -169,38 +201,6 @@
       </div>
     </div>
 
-    <!-- daba  -->
-    <div class="w3-container w3-content w3-center w3-padding-64" id="daba">
-      <h2 class="w3-wide">Kaut kas par dabu</h2>
-    </div>
-
-    <!-- The Contact Section -->
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-      <h2 class="w3-wide w3-center">Kontakti</h2>
-      <p class="w3-opacity w3-center"><i>Sazinies ar mums!</i></p>
-      <div class="w3-row w3-padding-32">
-        <div class="w3-col m6 w3-large w3-margin-bottom">
-          <i class="fa fa-map-marker" style="width:30px"></i> Ezernieki, Augšlīgatne,
-          Līgatnes novads, Latvija, LV-4108<br>
-          <i class="fa fa-phone" style="width:30px"></i> Telefons: +371 26592550<br>
-          <i class="fa fa-envelope" style="width:30px"> </i> E-pasts: info@ezernieki.lv<br>
-        </div>
-        <div class="w3-col m6">
-          <form action="/action_page.php" target="_blank">
-            <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-              <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Jūsu Vārds" required name="Name">
-              </div>
-              <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="E-pasts" required name="Email">
-              </div>
-            </div>
-            <input class="w3-input w3-border" type="text" placeholder="Ziņa" required name="Message">
-            <button class="w3-button w3-black w3-section w3-right" type="submit">SŪTĪT ZIŅU</button>
-          </form>
-        </div>
-      </div>
-    </div>
 
     <!-- End Page Content -->
   </div>
@@ -232,7 +232,7 @@
     }
 
     // Used to toggle the menu on small screens when clicking on the menu button
-    function myFunction() {
+    function toggleMenu() {
       var x = document.getElementById("navDemo");
       if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
