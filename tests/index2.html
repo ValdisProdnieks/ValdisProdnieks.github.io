@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+  <title>bambinomio.lv</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="assets/js/includeHTML.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/css/bambino.color.themes.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+  body {
+    background-color: #f1f1fa;
+  }
+  </style>
+
+<body>
+
+  <div w3-include-html="assets/html/navigation.html"></div>
+
+  <script>
+    includeHTML();
+
+    function toggleNavBar() {
+      var x = document.getElementById("navig-small-screens");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
