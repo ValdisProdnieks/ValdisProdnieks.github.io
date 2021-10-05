@@ -96,27 +96,199 @@
     <!-- Slides -->
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <div class="w3-content" style="max-width:1500px">
-      <h2 class="w3-wide">Kaut kas par dabu</h2>
-      <h3 class="w3-center">SLAIDU GALERIJA</h3>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
 
-      <img class="slides" src="assets/images/lielais-viesu-nams/1.jpg" width="90%">
-      <img class="slides" src="assets/images/lielais-viesu-nams/1g.jpg" width="90%">
-      <img class="slides" src="assets/images/lielais-viesu-nams/2.jpg" width="90%">
-      <img class="slides" src="assets/images/lielais-viesu-nams/3.jpg" width="90%">
-      <img class="slides" src="assets/images/lielais-viesu-nams/4.jpg" width="90%">
-      <img class="slides" src="assets/images/lielais-viesu-nams/12.jpg" width="90%">
-      <img class="slides" src="assets/images/mazais-viesu-nams/1.jpg" width="90%">
-      <img class="slides" src="assets/images/mazais-viesu-nams/3.jpg" width="90%">
-      <img class="slides" src="assets/images/mazais-viesu-nams/4.jpg" width="90%">
-      <img class="slides" src="assets/images/galdu-klasana/3.jpg" width="90%">
-      <img class="slides" src="assets/images/daba/1.jpg" width="90%">
-      <img class="slides" src="assets/images/daba/3.jpg" width="90%">
-      <img class="slides" src="assets/images/daba/4.jpg" width="90%">
-      <script>
-        w3.slideshow(".slides", 1500);
-      </script>
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+<body>
+
+<h2 style="text-align:center">GALERIJA</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="assets/images/2021/14-7I3A5864.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="assets/images/2021/20-7I3A5908.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="assets/images/2021/1-7I3A5782.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="assets/images/2021/55-7I3A6218.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="assets/images/2021/93-7I3A6391.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="assets/images/2021/128-7I3A6593.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="assets/images/2021/14-7I3A5864.jpg" style="width:100%" onclick="currentSlide(1)" alt="pirmā bilde">
     </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/images/2021/20-7I3A5908.jpg" style="width:100%" onclick="currentSlide(2)" alt="otrā bilde">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/images/2021/1-7I3A5782.jpg" style="width:100%" onclick="currentSlide(3)" alt="trešā bilde">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/images/2021/55-7I3A6218.jpg" style="width:100%" onclick="currentSlide(4)" alt="ceturtā bilde">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="assets/images/2021/93-7I3A6391.jpg" style="width:100%" onclick="currentSlide(5)" alt="piektā bilde">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="assets/images/2021/128-7I3A6593.jpg" style="width:100%" onclick="currentSlide(6)" alt="sestā bilde">
+    </div>
+  </div>
+</div>
 
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    <!-- End Slides -->
+	
     <!-- The Contact Section -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
       <h2 class="w3-wide w3-center">Kontakti</h2>
