@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/galerija.css">
   <style>
     body {
       font-family: "Lato", sans-serif
@@ -18,6 +19,9 @@
       display: none
     }
   </style>
+  <!-- JavaScript -->
+  <script src="assets/js/galerija.js"></script>
+
 </head>
 
 <body>
@@ -103,8 +107,76 @@
       </div>
 
       <h3 class="w3-justify">Lai atpūta pie mums būtu iespaidiem bagātāka, piedāvājam
-          izstrādāt ekskursijas programmas pa Līgatnes labākajiem apskates objektiem.
+        izstrādāt ekskursijas programmas pa Līgatnes labākajiem apskates objektiem.
       </h3>
+    </div>
+
+    <h2 style="text-align:center">GALERIJA</h2>
+
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="assets/images/2021/14-7I3A5864.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img src="assets/images/2021/20-7I3A5908.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img src="assets/images/2021/1-7I3A5782.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img src="assets/images/2021/55-7I3A6218.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img src="assets/images/2021/93-7I3A6391.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="assets/images/2021/128-7I3A6593.jpg" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/14-7I3A5864.jpg" style="width:100%" onclick="currentSlide(1)"
+            alt="pirmā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/20-7I3A5908.jpg" style="width:100%" onclick="currentSlide(2)"
+            alt="otrā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/1-7I3A5782.jpg" style="width:100%" onclick="currentSlide(3)"
+            alt="trešā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/55-7I3A6218.jpg" style="width:100%" onclick="currentSlide(4)"
+            alt="ceturtā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/93-7I3A6391.jpg" style="width:100%" onclick="currentSlide(5)"
+            alt="piektā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/128-7I3A6593.jpg" style="width:100%"
+            onclick="currentSlide(6)" alt="sestā bilde">
+        </div>
+      </div>
     </div>
 
     <!-- daba  -->
