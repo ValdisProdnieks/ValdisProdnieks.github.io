@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/galerija.css">
   <style>
     body {
       font-family: "Lato", sans-serif
@@ -18,261 +19,224 @@
       display: none
     }
   </style>
-  </head>
-  
-  <body>
-  
-    <!-- Navbar -->
-    <div class="w3-top">
-      <div class="w3-bar w3-black w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
-          onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large ">SĀKUMS</a>
-        <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large w3-hide-small">VIESU NAMS</a>
-        <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-hide-small">IESPĒJAS</a>
-        <a href="#daba" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DABA</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KONTAKTI</a>
-      </div>
+  <!-- JavaScript -->
+  <script src="assets/js/galerija.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
+        onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large ">SĀKUMS</a>
+      <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large w3-hide-small">VIESU NAMS</a>
+      <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-hide-small">IESPĒJAS</a>
+      <a href="#daba" class="w3-bar-item w3-button w3-padding-large w3-hide-small">DABA</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KONTAKTI</a>
     </div>
-  
+
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
       <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">VIESU NAMS</a>
       <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">IESPĒJAS</a>
       <a href="#daba" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">DABA</a>
       <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">KONTAKTI</a>
-  
+
     </div>
-  
-    <!-- Page content -->
-    <div class="w3-content" style="max-width:2000px;margin-top:46px">
-      <!-- Main image -->
-      <div class="w3-display-container w3-center">
-        <picture>
-          <source media="(min-width:650px)" srcset="assets/images/mainsmall.jpg">
-          <img src="assets/images/main.jpg" style="width: 100%">
-        </picture>
+  </div>
+
+
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:2000px;margin-top:46px">
+    <!-- Main image -->
+    <div class="w3-display-container w3-center">
+      <picture>
+        <source media="(min-width:650px)" srcset="assets/images/mainsmall.jpg">
+        <img src="assets/images/main.jpg" style="width: 100%">
+      </picture>
+    </div>
+
+    <!-- guest house  -->
+    <div class="w3-container w3-content w3-center w3-padding-64" id="guest_house">
+      <!-- <img src="assets/images/LOGO4.jpg" style="width: 65%"> -->
+      <h3 class="w3-justify"><b>Viesu nams “Ezernieki” ir Sajūtu nams </b>, jo atrodas klusā un dabas ieskautā vietā,
+        ar
+        plašu teritoriju, Saules kalnu,mežu, kuru caurvij skanīgā upīte. Vieta, kura mīl cilvēkus. <br>
+      </h3>
+      <div class="w3-row w3-border w3-black">
+        <div class="w3-container w3-twothird">
+          <ul class=" w3-ul w3-justify">
+            <li>
+              <h3>Viesu nams ir piemērots Tev, ja vēlies organizēt:</h3>
+            </li>
+            <li>Lielākas vai mazākas ballītes</li>
+            <li>Nometnes</li>
+            <li>Kāzas</li>
+            <li>Korporatīvos pasākumus</li>
+            <li>Seminārus/konferences</li>
+            <li>Koncertus (dabas akustika ir fantastiska)</li>
+          </ul>
+        </div>
+        <div class="w3-container w3-third">
+          <ul class="w3-ul w3-justify">
+            <li>
+              <h3>Viesu nama ietilpība</h3>
+            </li>
+            <li>1.stāvs - zāle pasākumiem 50 cilvēkiem. Liela virtuve. Pirts un atpūtas stūrītis</li>
+            <li>2.stāvs - 6 numuriņi (30 gultasvietas)</li>
+            <li>3.stāvs – jumta istaba ( 20 gultasvietas)</li>
+          </ul>
+        </div>
       </div>
-  
-  
-  
-      <!-- guest house  -->
-      <div class="w3-container w3-content w3-center w3-padding-64" id="guest_house">
-       <!-- <img src="assets/images/LOGO4.jpg" style="width: 65%"> -->
-        <h3 class="w3-justify"><b>Viesu nams “Ezernieki” ir Sajūtu nams </b>, jo atrodas klusā un dabas ieskautā vietā, ar
-          plašu teritoriju, Saules kalnu,mežu, kuru caurvij skanīgā upīte. Vieta, kura mīl cilvēkus. <br>
+      <hr>
+      <div>
+        <h3 class="w3-justify">
+          <b>Kaimiņos mums atrodas:</b>
+          Līgatnes papīrfabrikas ciemats,
+          Līgatnes Amatu māja,
+          Pārceltuve-prāmis pār Gauju,
+          Līgatnes dabas takas,
+          Padomju slepenais bunkurs,
+          Vienkoču parks,
+          Līgatnes vīna darītava un Karošu darbnīca,
+          Zeit - tīklu parks
         </h3>
-        <div class="w3-row w3-border w3-black">
-          <div class="w3-container w3-twothird">
-            <ul class=" w3-ul w3-justify">
-              <li>
-                <h3>Viesu nams ir piemērots Tev, ja vēlies organizēt:</h3>
-              </li>
-              <li>Lielākas vai mazākas ballītes</li>
-              <li>Nometnes</li>
-              <li>Kāzas</li>
-              <li>Korporatīvos pasākumus</li>
-              <li>Seminārus/konferences</li>
-              <li>Koncertus (dabas akustika ir fantastiska)</li>
-            </ul>
-          </div>
-          <div class="w3-container w3-third">
-            <ul class="w3-ul w3-justify">
-              <li>
-                <h3>Viesu nama ietilpība</h3>
-              </li>
-              <li>1.stāvs - zāle pasākumiem 50 cilvēkiem. Liela virtuve. Pirts un atpūtas stūrītis</li>
-              <li>2.stāvs - 6 numuriņi (30 gultasvietas)</li>
-              <li>3.stāvs – jumta istaba ( 20 gultasvietas)</li>
-            </ul>
-          </div>
-        </div>
         <hr>
-        <div>
-          <h3 class="w3-justify">
-            <b>Kaimiņos mums atrodas:</b>
-            Līgatnes papīrfabrikas ciemats,
-            Līgatnes Amatu māja,
-            Pārceltuve-prāmis pār Gauju,
-            Līgatnes dabas takas,
-            Padomju slepenais bunkurs,
-            Vienkoču parks,
-            Līgatnes vīna darītava un Karošu darbnīca,
-            Zeit - tīklu parks
-          </h3>
-          <hr>
-          <h3 class="w3-justify">
-            Lai atpūta pie mums būtu iespaidiem bagātāka, piedāvājam
-            izstrādāt ekskursijas programmas pa Līgatnes labākajiem apskates objektiem.
-          </h3>
-          <hr>
-        </div>
-  
-  
-        <!-- daba  -->
-        <div class="w3-container w3-content w3-center w3-padding-64" id="daba">
-          <h2 class="w3-wide">Kaut kas par dabu</h2>
-        </div>
+        <h3 class="w3-justify">
+          Lai atpūta pie mums būtu iespaidiem bagātāka, piedāvājam
+          izstrādāt ekskursijas programmas pa Līgatnes labākajiem apskates objektiem.
+        </h3>
         <hr>
-
-      <!-- The Contact Section -->
-      <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-        <h2 class="w3-wide w3-center">Kontakti</h2>
-        <p class="w3-opacity w3-center"><i>Sazinies ar mums!</i></p>
-        <div class="w3-row w3-padding-32">
-          <div class="w3-col m6 w3-large w3-margin-bottom">
-            <i class="fa fa-map-marker" style="width:30px"></i> Ezernieki, Augšlīgatne,
-            Līgatnes novads, Latvija, LV-4108<br>
-            <i class="fa fa-phone" style="width:30px"></i> Telefons: +371 26592550<br>
-            <i class="fa fa-envelope" style="width:30px"> </i> E-pasts: info@ezernieki.lv<br>
-          </div>
-          <div class="w3-col m6">
-            <form action="/action_page.php" target="_blank">
-              <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-                <div class="w3-half">
-                  <input class="w3-input w3-border" type="text" placeholder="Jūsu Vārds" required name="Name">
-                </div>
-                <div class="w3-half">
-                  <input class="w3-input w3-border" type="text" placeholder="E-pasts" required name="Email">
-                </div>
-              </div>
-              <input class="w3-input w3-border" type="text" placeholder="Ziņa" required name="Message">
-              <button class="w3-button w3-black w3-section w3-right" type="submit">SŪTĪT ZIŅU</button>
-            </form>
-          </div>
-        </div>
       </div>
 
-
-      <!-- The Services Section -->
-      <div class="w3-black" id="services">
-        <div class="w3-row w3-padding-32">
-          <div class="w3-half">
-            <h2>Izglītība</h2>
-            <img src="assets/images/konference.jpg" class="w3-round w3-margin-bottom" alt="Random Name"
-              style="width:60%">
-            <p>
-            <ul>
-              <li>Komferences</li>
-              <li>Semināri</li>
-            </ul>
-            Lielā zāle nodrošina vietu skaitu līdz 65 cilvēkiem. Ir pieejams
-            nepieciešamais aprīkojums</p>
-          </div>
-          <div class="w3-half">
-            <h2>Aktivitātes</h2>
-            <img src="assets/images/activities.jpg" class="w3-round w3-margin-bottom" alt="Random Name"
-              style="width:80%">
-            <div class="w3-row w3-padding-32">
-              <div class="w3-half">
-                Ziemā
-                <ul style="margin: 5px 0 5px 18px;">
-                  <li style="margin-bottom: 0px;">Distanču slēpošana</li>
-                  <li style="margin-bottom: 0px;">Vizināšanās ar ragavām pa Saules
-                    kalnu</li>
-                  <li style="margin-bottom: 0px;">Izbrauciens ar haskija suņu
-                    pajūgiem </li>
-                </ul>
-              </div>
-              <div class="w3-half">
-                Vasarā
-                <ul style="margin: 5px 0 5px 18px;">
-                  <li style="margin-bottom: 0px;">Futbols</li>
-                  <li style="margin-bottom: 0px;">Volejbols</li>
-                  <li style="margin-bottom: 0px;">Basketbols</li>
-                  <li style="margin-bottom: 0px;">Laukums sporta spēlēm</li>
-                  <li style="margin-bottom: 0px;">Orientēšanās pa mežu</li>
-                  <li style="margin-bottom: 0px;">Peintbols</li>
-                  <li style="margin-bottom: 0px;">Karaoke</li>
-                  <li style="margin-bottom: 0px;">Laivu braucieni pa Gauju</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="w3-row w3-padding-32">
-            <div class="w3-half">
-              <h2>Atpūta</h2>
-              <p>
-              <ul style="margin: 5px 0 5px 18px;">
-                <li style="margin-bottom: 0px;">Pirts</li>
-                <li style="margin-bottom: 0px;">Pirtnieka pakalpojumi (iepriekšs
-                  saskaņojot)</li>
-                <li style="margin-bottom: 0px;">Āra baļļa ar avota ūdeni</li>
-                <li style="margin-bottom: 0px;">Lieliska pelde dīķī ar avota
-                  ūdeni</li>
-                <li style="margin-bottom: 0px;">Pastaigas pa mežu</li>
-                <li style="margin-bottom: 0px;">Makšķerēšana</li>
-                <li style="margin-bottom: 0px;">Lasīt grāmatas (kas būtu līdzi
-                  paķērusies vai arī izņemta no Ezernieku grāmatu plaukta)
-                </li>
-              </ul>
-              </p>
-            </div>
-            <div class="w3-half">
-              <h2>Ēdināšanas iespējas</h2>
-              <p>
-              <ul style="margin: 5px 0 5px 18px;">
-                <li style="margin-bottom: 0px;">Ugunskura vietas</li>
-                <li style="margin-bottom: 0px;">Iekoptas piknika vietas</li>
-                <li style="margin-bottom: 0px;">Grills</li>
-                <li style="margin-bottom: 0px;">Kūpinātava</li>
-                <li style="margin-bottom: 0px;">Aprīkotā virtuve sniedz iespēju
-                  pieaicināt profesionālus pavārus</li>
-                <i>*Ēdināšanas iestādes (Jūsu izvēlētas vai mūsu ieteiktas)</i>
-              </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- End Page Content -->
+      <h3 class="w3-justify">Lai atpūta pie mums būtu iespaidiem bagātāka, piedāvājam
+        izstrādāt ekskursijas programmas pa Līgatnes labākajiem apskates objektiem.
+      </h3>
     </div>
 
-    <!-- Image of location/map -->
-    <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+    <div class="container">
+      <h2 style="text-align:center">GALERIJA</h2>
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img src="assets/images/2021/14-7I3A5864.jpg" style="width:100%">
+      </div>
 
-    <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img src="assets/images/2021/20-7I3A5908.jpg" style="width:100%">
+      </div>
 
-    </footer>
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img src="assets/images/2021/1-7I3A5782.jpg" style="width:100%">
+      </div>
 
-    <script>
-      // Automatic Slideshow - change image every 4 seconds
-      var myIndex = 0;
-      carousel();
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img src="assets/images/2021/55-7I3A6218.jpg" style="width:100%">
+      </div>
 
-      function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) { myIndex = 1 }
-        x[myIndex - 1].style.display = "block";
-        setTimeout(carousel, 4000);
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img src="assets/images/2021/93-7I3A6391.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img src="assets/images/2021/128-7I3A6593.jpg" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/14-7I3A5864.jpg" style="width:100%" onclick="currentSlide(1)"
+            alt="pirmā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/20-7I3A5908.jpg" style="width:100%" onclick="currentSlide(2)"
+            alt="otrā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/1-7I3A5782.jpg" style="width:100%" onclick="currentSlide(3)"
+            alt="trešā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/55-7I3A6218.jpg" style="width:100%" onclick="currentSlide(4)"
+            alt="ceturtā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/93-7I3A6391.jpg" style="width:100%" onclick="currentSlide(5)"
+            alt="piektā bilde">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="assets/images/2021/128-7I3A6593.jpg" style="width:100%"
+            onclick="currentSlide(6)" alt="sestā bilde">
+        </div>
+      </div>
+    </div>
+
+    <!-- daba  -->
+    <div class="w3-container w3-content w3-center w3-padding-64" id="daba">
+      <h2 class="w3-wide">Kaut kas par dabu</h2>
+    </div>
+    
+    <!-- The Contact Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+      <h2 class="w3-wide w3-center">Kontakti</h2>
+      <p class="w3-opacity w3-center"><i>Sazinies ar mums!</i></p>
+      <div class="w3-row w3-padding-32">
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker" style="width:30px"></i> Ezernieki, Augšlīgatne,
+          Līgatnes novads, Latvija, LV-4108<br>
+          <i class="fa fa-phone" style="width:30px"></i> Telefons: +371 26592550<br>
+          <i class="fa fa-envelope" style="width:30px"> </i> E-pasts: info@ezernieki.lv<br>
+        </div>
+      </div>
+    </div>
+
+    <!-- End Page Content -->
+  </div>
+
+  <!-- Image of location/map -->
+  <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+  </footer>
+
+  <script>
+    // show image gallery
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleMenu() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
       }
+    }
 
-      // Used to toggle the menu on small screens when clicking on the menu button
-      function toggleMenu() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
-        } else {
-          x.className = x.className.replace(" w3-show", "");
-        }
+    // When the user clicks anywhere outside of the modal, close it
+    var modal = document.getElementById('ticketModal');
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
       }
-
-      // When the user clicks anywhere outside of the modal, close it
-      var modal = document.getElementById('ticketModal');
-      window.onclick = function (event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-    </script>
+    }
+  </script>
 
 </body>
 
