@@ -1,7 +1,7 @@
 div class="container">
 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Veikt pasūtījumu</button>
 <div id="demo" class="collapse">
-  <form action="https://formsubmit.co/ilzegrabovska@inbox.lv" method="POST">
+  <form action="https://formsubmit.co/prvprvprv@gmail.com" method="POST">
     <h3>BAMBINO MIO Care Washing Powder – veļas pulveris (800g)</h3>
     <div>
       <label for="vārds">Vārds</label>
