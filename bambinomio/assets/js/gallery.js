@@ -1,20 +1,20 @@
 
-function nextElement(n, product) {
-  galeryCounters.set(product, galeryCounters.get(product) + n);
-  showElement(galeryCounters.get(product), product);
+function galleryNext(n, product) {
+  // show next element for simple gallery
+  galleryCounters.set(product, galleryCounters.get(product) + n);
+  galleryShow(galleryCounters.get(product), product);
 }
 
-function showElement(n, product) {
-
-  // show the right element
+function galleryShow(n, product) {
+  // show the chosen element for simple gallery
   slideClass = product + "Slides"; // slide class is product id + "Slides"
   let x = document.getElementsByClassName(slideClass);
   if (n > x.length) {
-    galeryCounters.set(product, 1);
+    galleryCounters.set(product, 1);
     n = 1;
   }
   if (n < 1) {
-    galeryCounters.set(product, x.length);
+    galleryCounters.set(product, x.length);
     n = x.length;
   };
 
@@ -41,7 +41,7 @@ function generateGallery2(idBigPicture, idListThumbmails, idSizes, idBasketButto
     let div = document.createElement("div");
     div.className = "w3-quarter";
     let img = document.createElement("img");
-    img.className = "swimnappies w3-opacity w3-hover-opacity-off w3-round";
+    img.className = "w3-opacity w3-hover-opacity-off w3-round";
     img.src = data.colors[i].img;
     img.style.width = "100%";
     img.style.cursor = "pointer;"
@@ -83,6 +83,21 @@ function showGalleryImage2(n, idBigPicture, idSizes, idBasketButton, data) {
     let sizeXL = document.createElement("option");
     sizeXL.value = sizeXL.text = "ļoti lielas (XL) - 12-15 kg";
     sizes.appendChild(sizeXL);
+  }
+  if (data.colors[n].sizes.indexOf("small") !== -1) {
+    let sizesmall = document.createElement("option");
+    sizesmall.value = sizesmall.text = "līdz 9kg (līdz 6mēnešiem)";
+    sizes.appendChild(sizesmall);
+  }
+  if (data.colors[n].sizes.indexOf("big") !== -1) {
+    let sizebig = document.createElement("option");
+    sizebig.value = sizebig.text = "no 9kg (no 6mēnešiem)";
+    sizes.appendChild(sizebig);
+  }
+  if (data.colors[n].sizes.indexOf("onesize") !== -1) {
+    let sizeonesize = document.createElement("option");
+    sizeonesize.value = sizeonesize.text = "viena izmēra";
+    sizes.appendChild(sizeonesize);
   }
 
   // modify basket button
