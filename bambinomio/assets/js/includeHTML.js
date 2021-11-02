@@ -29,7 +29,13 @@ function includeHTML() {
       xhttp.send();
 
       generateGallery2("swimnappy-current", "swimnappies-list", "swimNapiesSizes", "swimNapiesBasketButton", swimNappiesData);
-      
+      generateGallery2("miosoft-current", "miosoft-list", "mioSoftSizes", "mioSoftBasketButton", mioSoftData);
+      generateGallery2("miosolo-current", "miosolo-list", "mioSoloSizes", "mioSoloBasketButton", mioSoloData);
+
+      // load prices for simple products
+      document.getElementById("pulverisPrice").innerHTML = simpleProductPrices["pulveris"] + "€";
+      document.getElementById("palagsPrice").innerHTML = simpleProductPrices["palags"] + "€";
+
       /*exit the function:*/
       return;
     }
