@@ -1,269 +1,299 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <!-- Title Tag
-    ========================================================================= -->
-    <title>Ezernieki.lv</title>
 
-    <!-- Browser Specical Files
-    ========================================================================= -->
-    <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
-    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <title>Ezernieki.lv</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/css/ezernieki.css">
 
-    <!-- Site Favicon
-    ========================================================================= -->
-    <link rel="shortcut icon" href="#" title="Favicon" />
+  <!-- gallery -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
 
-    <!-- WP HEAD
-    ========================================================================= -->
-    <link
-        href='http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic,700,700italic,900,900italic,300italic&subset=latin,latin-ext'
-        rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/layerslider.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/skins/brown.css">
-
-    <!-- Browser Specical File-->
-    <!--[if IE 8]><link href="assets/css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-
-    <!-- JavaScript -->
-    <script src="assets/js/jquery-1.9.1.min.js"></script>
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script src="assets/js/navigation.js"></script>
 
 </head>
 
 <body>
 
-    <div class="body-outer-wrapper">
-        <div id="body-wrapper" class="body-wrapper full-width-mode">
+  <!-- Navbar -->
+  <!-- <div class="w3-top">
+    <div class="w3-bar w3-card">
+      <button class="w3-button w3-xlarge" onclick="location.href='#';"><i class="fa fa-home" aria-hidden="true"
+          onclick="showHome()"></i></button>
+      <a class="w3-bar-item w3-button w3-padding-large w3-right" href="javascript:void(0)" onclick="toggleMenu()"
+        title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    </div>
 
-            <header id="header" class="header-container-wrapper">
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+  <!--     
+    <div id="navDemo" class="w3-bar-block w3-hide w3-top" style="margin-top:56px">
+      <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large"
+        onclick="showGuestHouse();toggleMenu()">VIESU NAMS</a>
+      <a href="#services" class="w3-bar-item w3-button w3-padding-large"
+        onclick="showServices();toggleMenu()">IESPĒJAS</a>
+      <a href="#daba" class="w3-bar-item w3-button w3-padding-large" onclick="showNature();toggleMenu()">DABA</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">KONTAKTI</a>
 
-                <div class="top-bar-outer-wrapper">
-                    <div class="top-bar-wrapper container">
-                        <div class="row">
-                            <div class="top-bar-left left">
-                                <nav id="top-nav-id" class="top-nav slideMenu">
-                                    <!--<ul>
-                                    
-                                    <li><a href="#"><img class="iclflag" src="assets/images/flags/uk_.png" alt=""> English</a>
-                                        <ul>
-                                            <li><a href="#"><img class="iclflag" src="assets/images/flags/ru.png" alt=""> Russian</a></li>
-                                            <li><a href="#"><img class="iclflag" src="assets/images/flags/de.png" alt=""> German</a></li>
-                                            <li><a href="#"><img class="iclflag" src="assets/images/flags/lv.png" alt=""> Latvian</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>-->
-                                </nav>
-                            </div>
-                            <div class="top-bar-right right">
-                                <ul class="top-bar-contact">
-                                    <li class="top-bar-address">Viesu nams "Ezernieki" atrodas Cēsu rajonā, Augšlīgatnē
-                                        - <a href="kontakti.html">Skatīt karti</a></li>
-                                    <li class="top-bar-phone">Telefons: <span>+371 26592550 </span></li>
-                                </ul>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div><!-- END .top-bar-wrapper -->
-                </div> <!-- END .top-bar-outer-wrapper -->
-                <div class="header-outer-wrapper">
-                    <div class="header-wrapper container">
-                        <div class="row">
-                            <div class="twelve columns b0">
-                                <div class="header-left left">
-                                    <div class="logo-wrapper">
-                                        <h1><a href="index.html"><img src="assets/images/logo.png"
-                                                    alt="Hotec Hotel Template"></a></h1>
-                                    </div>
-                                </div>
-                                <div class="header-right right">
-                                    <nav id="primary-nav-id" class="primary-nav slideMenu">
-                                        <ul>
-                                            <li class="current-menu-item"><a href="index.html">Sākums</a></li>
-                                            <li><a href="viesu-nams.html">Viesu nams</a></li>
-                                            <li><a href="pakalpojumi.html">Pakalpojumi</a></li>
-                                            <li><a href="galerija.html">Galerija</a></li>
-                                            <li><a href="kontakti.php">Kontakti</a></li>
-                                        </ul>
-                                    </nav>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                    </div><!-- END .header-wrapper -->
-                </div><!-- END .header-outer-wrapper -->
-            </header> <!-- END .header-container-wrapper -->
+    </div>
+  </div> -->
 
-            <div class="slider-outer-wrapper">
-                <div class="main_slider">
-                    <div id="layerslider" style="width: 100%; height: 500px; margin: 0px auto; ">
+  <div class="w3-top w3-white">
+    <div class="w3-bar w3-card">
+      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
+        onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <button class="w3-button w3-xlarge w3-left" onclick="location.href='#';"><i class="fa fa-home" aria-hidden="true"
+          onclick="showHome()"></i></button>
+      <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+        onclick="showGuestHouse();">VIESU NAMS</a>
+      <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+        onclick="showServices();">IESPĒJAS</a>
+      <a href="#daba" class="w3-bar-item w3-button w3-padding-large w3-hide-small" onclick="showNature();">DABA</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">KONTAKTI</a>
+    </div>
 
-                        <div class="ls-layer"
-                            style="slidedirection: top; slidedelay: 7000; durationin: 1500; durationout: 1500; delayout: 500;">
-                            <img src="assets/images/slide1.png" class="ls-bg" alt="">
-                            <div class="ls-s2 l1-s1 ls-s"
-                                style="padding:20px;background:rgba(0, 0, 0, 0.4);position:absolute;left:0px;top:80px;slidedirection : top; ">
-                                <h1
-                                    style="margin:0px;font-size:33px;color:#fff;font-weight: 900;letter-spacing: -1.2px;">
-                                    BRAUC CIEMOS!</h1>
-                            </div>
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+      <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large w3-right-align"
+        onclick="showGuestHouse();toggleMenu()">VIESU NAMS</a>
+      <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-right-align"
+        onclick="showServices();toggleMenu()">IESPĒJAS</a>
+      <a href="#daba" class="w3-bar-item w3-button w3-padding-large w3-right-align"
+        onclick="showNature();toggleMenu()">DABA</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right-align"
+        onclick="toggleMenu()">KONTAKTI</a>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="shadow-box"></div>
-            </div>
+    </div>
+  </div>
 
-            <div class="main-outer-wrapper has-slider">
-                <div class="main-wrapper container">
-                    <div class="row row-wrapper">
-                        <div class="page-outer-wrapper">
-                            <div class="page-wrapper twelve columns no-sidebar b0">
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:2000px;margin-top:46px">
+    <!-- Main image -->
+    <div id="main" class="w3-display-container w3-center w3-hide w3-show">
+      <picture>
+        <source media="(min-width:650px)" srcset="assets/images/mainsmall.jpg">
+        <img src="assets/images/mainsmall.jpg" style="width: 100%">
+      </picture>
+      <p class=" w3-margin w3-center w3-large">Sajūtu nams, jo atrodas klusā un dabas ieskautā vietā, ar plašumu gan
+        iekšā gan ārā. Blakus atrodas pastaigu mežs, divi sirds formas dīķi un ainaviskais Saules kalns.
+      </p>
+      <div class="w3-row w3-padding-48 w3-margin">
+        <div class="w3-circle w3-third">
+          <img src="assets/images/VN/VN1.jpg" class="w3-circle  w3-margin"
+            style="width:100%;max-width:400px;padding:12px;" alt="Viesu nams" onclick="showGuestHouse();">
+          <div class="w3-container w3-xlarge">
+            <p><b>Viesu nams</b></p>
+          </div>
+        </div>
+        <div class="w3-circle w3-third">
+          <img src="assets/images/1-7I3A5782.jpg" class="w3-circle  w3-margin"
+            style="width:100%;max-width:400px;padding:12px;" alt="Iespējas" onclick="showServices();">
+          <div class="w3-container  w3-xlarge">
+            <p><b>Iespējas</b></p>
+          </div>
+        </div>
+        <div class="w3-circle w3-third ">
+          <img src="assets/images/daba/3.jpg" class="w3-circle w3-margin"
+            style="width:100%;max-width:400px;padding:12px;" alt="Daba" onclick="showNature();">
+          <div class="w3-container w3-xlarge">
+            <p><b>Daba</b></p>
+          </div>
+        </div>
+      </div>
 
-                                <div class="row">
-                                    <div class="twelve columns b0">
-                                        <div class="builder-item-wrapper builder-banners">
-                                            <div class="builder-item-content row">
-                                                <div class="banner-item-wrapper four columns">
-                                                    <div class="banner-item">
-                                                        <div class="banner-details">
-                                                            <h3 class="banner-title">Viesu nams</h3>
-                                                            <a href="lielais-viesu-nams.html" class="banner-more">Vairāk
-                                                                info →</a>
-                                                        </div>
-                                                        <img class="banner-image" src="assets/images/p1.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="banner-item-wrapper four columns">
-                                                    <div class="banner-item">
-                                                        <div class="banner-details">
-                                                            <h3 class="banner-title">Galerija</h3>
-                                                            <a href="galerija.html" class="banner-more">Vairāk info
-                                                                →</a>
-                                                        </div>
-                                                        <img class="banner-image" src="assets/images/p2.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="banner-item-wrapper four columns">
-                                                    <div class="banner-item">
-                                                        <div class="banner-details">
-                                                            <h3 class="banner-title">Pakalpojumi</h3>
-                                                            <a href="pakalpojumi.html" class="banner-more">Vairāk info
-                                                                →</a>
-                                                        </div>
-                                                        <img class="banner-image" src="assets/images/p3.png" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="clear"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clear"></div>
-                                </div><!-- END .row -->
+    </div>
+
+    <!-- guest house  -->
+    <div id="guest_house" class="w3-container w3-content w3-center w3-padding-64 w3-hide ">
+      <h3 class="w3-justify">Iespējas viesu namā “Ezernieki”:</h3>
+      <h3 class="w3-justify">Viesu nama ietilpība:</h3>
+      <ul class="w3-justify">
+        <li>1.stāvs - zāle pasākumiem 50 cilvēkiem. Liela virtuve. Pirts un atpūtas zona</li>
+        <li>2.stāvs - 6 numuriņi (30 gultasvietas)</li>
+        <li>3.stāvs – jumta istaba ( 20 gultasvietas)</li>
+      </ul>
+      <h3 class="w3-justify w3-margin-top">Viesu namā “Ezernieki” vari organizēt</h3>
+      <ul class=" w3-justify w3-padding-16">
+        <li>Lielākas vai mazākas ballītes</li>
+        <li>Nometnes</li>
+        <li>Kāzas</li>
+        <li>Korporatīvos pasākumus</li>
+        <li>Seminārus/konferences</li>
+        <li>Sporta spēles</li>
+        <li>Koncertus (Izcila dabas akustika)</li>
+      </ul>
+
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="assets/images/VN/VN1.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/VN2.jpg" style="width:100%;max-width:1200x"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/VN3.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/VN4.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/VN6.jpg" style="width:100%;max-width:1200px"></div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+      </div>
+    </div>
+
+    <!-- services  -->
+    <div id="services" class="w3-container w3-content w3-center w3-padding-64 w3-hide ">
+      <h3 class="w3-justify">Iespējas viesu namā “Ezernieki”:</h3>
+      <ul class=" w3-justify">
+        <li>Avota ūdens baļļa</li>
+        <li>Pirts</li>
+        <li>Aktivitātes teritorijā: futbola, basketbola, volejbola laukums ar inventāru,
+          badmintona komplekts, šūpuļtīkli, pastaigas mežā un Saules kalnā.
+        </li>
+        <li>Dabas baudīšana uz terases</li>
+        <li>Piknika vieta gan pie viesu nama, gan mežā.</li>
+        <li>Aktivitātes telpā: Šautriņi, novuss, grāmatu plaukts, savējo izzināšanas spēles.</li>
+      </ul>
+      <h3 class="w3-justify w3-margin-top">Papildus piedāvājums:</h3>
+      <ul class=" w3-justify  w3-padding-16">
+        <li>Aktivitāšu programmu izstrāde iekļaujot Līgatnes apskates objektus</li>
+        <li>Izklaides programmas izstrāde viesu namā “Ezernieki”. (Peintbols, orientēšanās, pirtnieks, zirgu izjādes,
+          fotosesija, laivu braucienus pa Gauju., jogu, Ziemā distanču slēpošanu.)</li>
+      </ul>
+
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="assets/images/services/I1.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/services/I2.jpg" style="width:100%;max-width:1200x">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/services/I3.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/services/I4.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/services/I5.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/services/I6.jpg" style="width:100%;max-width:1200px">
+          </div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+      </div>
+    </div>
+
+    <!-- daba  -->
+    <div id="daba" class="w3-container w3-content w3-center w3-padding-64 w3-hide">
+      <h3 class="w3-wide  w3-padding-16">Kaut kas par dabu</h3>
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="assets/images/daba/D0.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D1.jpg" style="width:100%;max-width:1200x">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D2.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D3.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D4.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D5.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D6.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D7.jpg" style="width:100%;max-width:1200px">
+          </div>
+          <div class="swiper-slide"><img src="assets/images/daba/D8.jpg" style="width:100%;max-width:1200px">
+          </div>
+        </div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </div>
+
+    <!-- The Contact Section -->
+    <div id="contact" class="w3-container w3-content w3-padding-64">
+      <p class="w3-wide w3-center w3-xlarge">Kontaktinformācija</p>
+      <div class=" w3-padding-16">
+        <div class="w3-row w3-large">
+          <i class="fa fa-map-marker" style="width:30px"></i> Viesu nams Ezernieki, Augšlīgatne,
+          Līgatnes novads, Latvija, LV-4108
+        </div>
+        <div class="w3-row w3-large ">
+          <i class="fa fa-envelope" style="width:30px"></i>
+          <a href="mailto:info@ezernieki.lv">info@ezernieki.lv</a>,
+          <a href="mailto:agnese.ezernieki@gmail.com">agnese.ezernieki@gmail.com</a>
+        </div>
+        <div class="w3-row w3-large ">
+          <i class="fa fa-phone" style="width:30px"></i> Mob: +371 27024303
+        </div>
+
+      </div>
+    </div>
+
+    <!-- End Page Content -->
+  </div>
+
+  <div>
+    <!-- Image of location/map -->
+    <!-- <img src="assets/images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d553317.206178295!2d25.0090166!3d57.1986675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e95a5d9201b40d%3A0x2c1083c4b7a458a6!2sEzernieki%20Aug%C5%A1l%C4%ABgatne!5e0!3m2!1sen!2sie!4v1639332259839!5m2!1sen!2sie" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d553317.206178295!2d25.0090166!3d57.1986675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e95a5d9201b40d%3A0x2c1083c4b7a458a6!2sEzernieki%20Aug%C5%A1l%C4%ABgatne!5e0!3m2!1sen!2sie!4v1639332259839!5m2!1sen!2sie"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div>
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+    </footer>
+  </div>
+
+  <script>
+    // // show image gallery
+    // var slideIndex = 1;
+    // showSlides(slideIndex);
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: false,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+    // to do: replace toggle element id
+    function toggleMenu() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
 
 
-
-
-                                <div class="row">
-                                    <div class="twelve columns b0">
-                                        <div class="builder-item-wrapper builder-rooms">
-
-                                            <div class="builder-title-wrapper clearfix">
-                                                <h3 class="builder-item-title">Ezernieki ir vieta, kur varēsiet
-                                                    atpūsties gan lielā kompānijā, gan šaurā draugu lokā.</h3>
-                                                <p style="margin-bottom: 0px;text-align: left;margin-top: 25px;">
-                                                    Viesu nams “Ezernieki” atrodas Augšlīgatnē, Gaujas nacionālā parka,
-                                                    ainavu aizsardzības zonā, 14km no Siguldas, mežu, pļavu un ūdeņu
-                                                    ielokā, ar kopējo zemes platību 14ha. “Ezernieki” ir vieta, kur
-                                                    varēsiet atslēgties no ikdienas rūpēm, pilsētas kņadas un baudīt
-                                                    neskarto dabu, kas sniedz neaizmirstamas sajūtas un lielisku atpūtu.
-                                                    Lai padarītu laiku, kad viesojieties pie mums vēl aizraujošāku,
-                                                    piedāvājam vairākas atpūtas iespējas (skatīt sadaļā PAKALPOJUMI ),
-                                                    kas domātas gan spēku atjaunošanai, gan gara attīrīšanai, gan
-                                                    enerģijas uzlādēšanai.<br></br>
-
-                                                    <b>Kaimiņos mums atrodas:</b><br />
-                                                    Vienkoču parks,
-                                                    Līgatnes dabas takas,
-                                                    Pasaku māja,
-                                                    Zvārtes iezis,
-                                                    Padomju slepenais bunkurs,
-                                                    Līgatnes papīrfabrika,
-                                                    Līgatnes pārceltuve – prāmis,
-                                                    Klintis,
-                                                    Alas Līgatnes pilsētā,
-                                                    Līgatnes vīndarītava.<br></br>
-                                                    <i>Lai atpūta pie mums būtu iespaidiem bagātāka, piedāvājam
-                                                        izstrādāt ekskursijas programmas pa Līgatnes labākajiem apskates
-                                                        objektiem.</i>
-                                                </p>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="clear"></div>
-                                </div> <!-- END .row -->
-
-                            </div> <!-- END .page-wrapper -->
-                            <div class="clear"></div>
-
-                        </div> <!-- END .page-outer-wrapper -->
-                    </div>
-                </div> <!-- END .main-wrapper -->
-
-
-
-
-
-            </div> <!-- END .main-outer-wrapper -->
-
-            <footer id="footer" class="footer-outer-wrapper">
-                <div class="footer-wrapper container">
-                    <div class="footer-copyright-wrapper row">
-                        <div class="twelve columns">
-                            <div class="footer-copyright">
-                                <div class="copy-left left">
-                                    Visas tiesības aizņemtas @ 2014
-                                </div>
-                                <div class="copy-social right">
-                                    Atpūtas komplekss "Ezernieki" - www.ezernieki.lv
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div> <!-- END .footer-wrapper -->
-            </footer> <!-- END .footer-outer-wrapper -->
-
-
-        </div><!-- END .body-wrapper -->
-    </div><!-- END .body-outer-wrapper -->
-
-
-    <script src="assets/js/ddsmoothmenu.js"></script>
-
-    <!-- Included LayerSlider -->
-    <script src="assets/js/jquery-easing-1.3.js"></script>
-    <script src="assets/js/jquery-transit-modified.js"></script>
-    <script src="assets/js/layerslider.transitions.js"></script>
-    <script src="assets/js/layerslider.kreaturamedia.jquery.js"></script>
-
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var FS = { "animation": "slide", "pauseOnHover": "true", "controlNav": "true", "directionNav": "false", "animationDuration": "500", "slideshowSpeed": "5000", "pauseOnAction": "false" };
-    /* ]]> */
-    </script>
-
-    <script src="assets/js/custom.js"></script>
+  </script>
 
 </body>
 
