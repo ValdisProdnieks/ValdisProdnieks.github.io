@@ -23,31 +23,10 @@
 <body>
 
   <!-- Navbar -->
-  <!-- <div class="w3-top">
-    <div class="w3-bar w3-card">
-      <button class="w3-button w3-xlarge" onclick="location.href='#';"><i class="fa fa-home" aria-hidden="true"
-          onclick="showHome()"></i></button>
-      <a class="w3-bar-item w3-button w3-padding-large w3-right" href="javascript:void(0)" onclick="toggleMenu()"
-        title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    </div>
-
-    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-  <!--     
-    <div id="navDemo" class="w3-bar-block w3-hide w3-top" style="margin-top:56px">
-      <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large"
-        onclick="showGuestHouse();toggleMenu()">VIESU NAMS</a>
-      <a href="#services" class="w3-bar-item w3-button w3-padding-large"
-        onclick="showServices();toggleMenu()">IESPĒJAS</a>
-      <a href="#daba" class="w3-bar-item w3-button w3-padding-large" onclick="showNature();toggleMenu()">DABA</a>
-      <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">KONTAKTI</a>
-
-    </div>
-  </div> -->
-
   <div class="w3-top w3-white">
     <div class="w3-bar w3-card">
       <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)"
-        onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        onclick="toggleElement('navSmallScreens')" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
       <button class="w3-button w3-xlarge w3-left" onclick="location.href='#';"><i class="fa fa-home" aria-hidden="true"
           onclick="showHome()"></i></button>
       <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large w3-hide-small"
@@ -59,15 +38,16 @@
     </div>
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <div id="navSmallScreens" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-top"
+      style="margin-top:46px">
       <a href="#guest_house" class="w3-bar-item w3-button w3-padding-large w3-right-align"
-        onclick="showGuestHouse();toggleMenu()">VIESU NAMS</a>
+        onclick="showGuestHouse();toggleElement('navSmallScreens')">VIESU NAMS</a>
       <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-right-align"
-        onclick="showServices();toggleMenu()">IESPĒJAS</a>
+        onclick="showServices();toggleElement('navSmallScreens')">IESPĒJAS</a>
       <a href="#daba" class="w3-bar-item w3-button w3-padding-large w3-right-align"
-        onclick="showNature();toggleMenu()">DABA</a>
+        onclick="showNature();toggleElement('navSmallScreens')">DABA</a>
       <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-right-align"
-        onclick="toggleMenu()">KONTAKTI</a>
+        onclick="toggleElement('navSmallScreens')">KONTAKTI</a>
 
     </div>
   </div>
@@ -84,25 +64,25 @@
         iekšā gan ārā. Blakus atrodas pastaigu mežs, divi sirds formas dīķi un ainaviskais Saules kalns.
       </p>
       <div class="w3-row w3-padding-48 w3-margin">
-        <div class="w3-circle w3-third">
-          <img src="assets/images/VN/VN1.jpg" class="w3-circle  w3-margin"
+        <div class="w3-third w3-display-container">
+          <img src="assets/images/VN/VN1.jpg" class="w3-round-large w3-margin "
             style="width:100%;max-width:400px;padding:12px;" alt="Viesu nams" onclick="showGuestHouse();">
-          <div class="w3-container w3-xlarge">
-            <p><b>Viesu nams</b></p>
+          <div class="w3-xlarge w3-display-middle" onclick="showGuestHouse();">
+            <p style="color:white;"><b>Viesu nams</b></p>
           </div>
         </div>
-        <div class="w3-circle w3-third">
-          <img src="assets/images/1-7I3A5782.jpg" class="w3-circle  w3-margin"
+        <div class="w3-third w3-display-container">
+          <img src="assets/images/1-7I3A5782.jpg" class="w3-round-large w3-margin"
             style="width:100%;max-width:400px;padding:12px;" alt="Iespējas" onclick="showServices();">
-          <div class="w3-container  w3-xlarge">
-            <p><b>Iespējas</b></p>
+          <div class="w3-xlarge w3-display-middle" onclick="showServices();">
+            <p style="color:white;"><b>Iespējas</b></p>
           </div>
         </div>
-        <div class="w3-circle w3-third ">
-          <img src="assets/images/daba/3.jpg" class="w3-circle w3-margin"
+        <div class="w3-third w3-display-container ">
+          <img src="assets/images/daba/3.jpg" class="w3-round-large w3-margin"
             style="width:100%;max-width:400px;padding:12px;" alt="Daba" onclick="showNature();">
-          <div class="w3-container w3-xlarge">
-            <p><b>Daba</b></p>
+          <div class="w3-xlarge w3-display-middle" onclick="showNature();">
+            <p style="color:white;"><b>Daba</b></p>
           </div>
         </div>
       </div>
@@ -111,14 +91,13 @@
 
     <!-- guest house  -->
     <div id="guest_house" class="w3-container w3-content w3-center w3-padding-64 w3-hide ">
-      <h3 class="w3-justify">Iespējas viesu namā “Ezernieki”:</h3>
       <h3 class="w3-justify">Viesu nama ietilpība:</h3>
       <ul class="w3-justify">
         <li>1.stāvs - zāle pasākumiem 50 cilvēkiem. Liela virtuve. Pirts un atpūtas zona</li>
         <li>2.stāvs - 6 numuriņi (30 gultasvietas)</li>
         <li>3.stāvs – jumta istaba ( 20 gultasvietas)</li>
       </ul>
-      <h3 class="w3-justify w3-margin-top">Viesu namā “Ezernieki” vari organizēt</h3>
+      <h3 class="w3-justify w3-margin-top">Viesu namā “Ezernieki” vari organizēt:</h3>
       <ul class=" w3-justify w3-padding-16">
         <li>Lielākas vai mazākas ballītes</li>
         <li>Nometnes</li>
@@ -134,11 +113,18 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide"><img src="assets/images/VN/VN1.jpg" style="width:100%;max-width:1200px"></div>
-          <div class="swiper-slide"><img src="assets/images/VN/VN2.jpg" style="width:100%;max-width:1200x"></div>
-          <div class="swiper-slide"><img src="assets/images/VN/VN3.jpg" style="width:100%;max-width:1200px"></div>
-          <div class="swiper-slide"><img src="assets/images/VN/VN4.jpg" style="width:100%;max-width:1200px"></div>
-          <div class="swiper-slide"><img src="assets/images/VN/VN6.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn1.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn2.jpg" style="width:100%;max-width:1200x"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn3.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn4.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn5.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn6.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn7.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn8.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn9.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn10.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn11.jpg" style="width:100%;max-width:1200px"></div>
+          <div class="swiper-slide"><img src="assets/images/VN/vn12.jpg" style="width:100%;max-width:1200px"></div>
         </div>
 
         <!-- If we need navigation buttons -->
@@ -163,7 +149,7 @@
       </ul>
       <h3 class="w3-justify w3-margin-top">Papildus piedāvājums:</h3>
       <ul class=" w3-justify  w3-padding-16">
-        <li>Aktivitāšu programmu izstrāde iekļaujot Līgatnes apskates objektus</li>
+        <li>Aktivitāšu programmu izstrāde iekļaujot Līgatnes apskates objektus.</li>
         <li>Izklaides programmas izstrāde viesu namā “Ezernieki”. (Peintbols, orientēšanās, pirtnieks, zirgu izjādes,
           fotosesija, laivu braucienus pa Gauju., jogu, Ziemā distanču slēpošanu.)</li>
       </ul>
@@ -266,9 +252,6 @@
   </div>
 
   <script>
-    // // show image gallery
-    // var slideIndex = 1;
-    // showSlides(slideIndex);
     const swiper = new Swiper('.swiper', {
       // Optional parameters
       direction: 'horizontal',
@@ -280,18 +263,6 @@
         prevEl: '.swiper-button-prev',
       },
     });
-
-    // Used to toggle the menu on small screens when clicking on the menu button
-    // to do: replace toggle element id
-    function toggleMenu() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
-
 
   </script>
 
